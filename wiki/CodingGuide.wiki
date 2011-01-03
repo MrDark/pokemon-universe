@@ -146,11 +146,12 @@ type FooBar struct {
 }}}
 
 Local variables may be declared in two ways:
-* var statement including type
+
+- var statement including type
 {{{
 var foo int = 0
 }}}
-* :`=` operator
+- :`=` operator
 {{{
 foo := 0
 }}}
