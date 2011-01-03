@@ -1,6 +1,6 @@
 #summary Coding guidelines
 #labels Featured
-p
+
 = Style =
 
 == Tabs & Indenting ==
