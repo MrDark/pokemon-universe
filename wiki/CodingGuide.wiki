@@ -144,3 +144,18 @@ type FooBar struct {
     bar1, bar2 int
 }
 }}}
+
+Local variables may be declared in two ways:
+* var statement including type
+{{{
+var foo int = 0
+}}}
+* := operator
+{{{
+foo := 0
+}}}
+Using the var statement without specifying the type is not allowed:
+{{{
+// Wrong
+var foo = 0
+}}}
