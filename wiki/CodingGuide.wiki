@@ -160,3 +160,13 @@ Using the var statement without specifying the type is not allowed:
 // Wrong
 var foo = 0
 }}}
+
+Functions that return an instance of a type should always have the New prefix followed by the name of the type. For example:
+{{{
+type Foo struct {
+}
+
+func NewFoo() *Foo {
+    return &Foo{}
+}
+}}}
