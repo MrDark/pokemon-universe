@@ -91,13 +91,13 @@ array[ index ]
 }}}
 
 == Naming ==
-Function arguments need to have an _ (underscore) in front of them. For example:
+Function arguments need to have an `_` (underscore) in front of them. For example:
 {{{
 func foo(_bar int) {
 }
 }}}
 
-Global variables need to have g_ in front of them. For example:
+Global variables need to have g`_` in front of them. For example:
 {{{
 g_globalfoo *FooBar = NewFooBar()
 }}}
