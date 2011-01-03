@@ -150,7 +150,7 @@ Local variables may be declared in two ways:
 {{{
 var foo int = 0
 }}}
-* := operator
+* :`=` operator
 {{{
 foo := 0
 }}}
