@@ -170,3 +170,6 @@ func NewFoo() *Foo {
     return &Foo{}
 }
 }}}
+
+== File naming ==
+All source (.go) files should be all lowercase. If the name is very long (try to avoid this!), it is allowed to use `_` (underscore) in the name to increase readability.
