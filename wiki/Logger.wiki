@@ -14,6 +14,9 @@ import (
     pulog "logger" // PU Logger package
 )
 
+// Create a global variable to we can use it anywhere in our application
+var g_logger *log.Logger 
+
 func main() {
     fmt.Println("Demo on how to setup a text to file logger")
 
