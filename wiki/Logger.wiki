@@ -1,4 +1,4 @@
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured,Phase-Support
 How to setup a basic text to file logger
 
 = Introduction =
@@ -21,7 +21,7 @@ func main() {
     fmt.Println("Demo on how to setup a text to file logger")
 
     // Setup logger
-    myLog, err := logger.NewLogger("mylogfile.txt")
+    myLog, err := pulog.NewLogger("mylogfile.txt") // Call PU logger constructor
     if err != nil { // Will return an error if it fails to create/open the file
    	return
     }
