@@ -1,0 +1,28 @@
+#labels Phase-Implementation
+How to setup a basic text to file logger
+
+= Introduction =
+
+Following code shows how to create a basic text to file logger using the Logger package
+
+{{{
+package main
+
+import (
+    "fmt"
+    "log"
+    pulog "logger" // PU Logger package
+)
+
+func main() {
+    fmt.Println("Demo on how to setup a text to file logger")
+
+    // Setup logger
+    myLog, err := logger.NewLogger("mylogfile.txt")
+    if err != nil { // Will return an error if it fails to create/open the file
+   	return
+    }
+    g_logger = log.New(myLog, "", log.Ltime) // Create a new log.Logger using our own log io.Writer
+    g_logger.Println("Writing to log here!")    
+}
+}}}
