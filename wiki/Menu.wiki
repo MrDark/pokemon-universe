@@ -1,7 +1,8 @@
 [GettingStarted]
 [CodingGuide]
 
-=== Documentation ===
-* [Packages]
+Documentation
+  * [Packages]
+
 
 [https://code.google.com/p/pokemon-universe/w/list Full page list]
