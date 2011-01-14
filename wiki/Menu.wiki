@@ -1,9 +1,11 @@
 [GettingStarted]
 
-[CodingGuide]
+----
 
 *Documentation*
+  * [CodingGuide]
   * [Packages]
 
+----
 
 [https://code.google.com/p/pokemon-universe/w/list Full page list]
