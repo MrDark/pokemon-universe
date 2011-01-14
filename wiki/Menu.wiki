@@ -1,11 +1,11 @@
 [GettingStarted]
 
+*[Contribute How to Contribute]*
 ----
 
 *Documentation*
   * [CodingGuide]
   * [Packages]
-  * [Contribute]
 
 ----
 
