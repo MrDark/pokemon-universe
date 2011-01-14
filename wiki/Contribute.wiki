@@ -10,7 +10,7 @@ Everyone is welcome to propose code modifications and additions to Pokemon Unive
 You will need the following:
   * Subversion
   * Python
-  * A Google account (used gmail, youtube etc.)
+  * A Google account (used for gmail, youtube etc.)
 
 = Contributing code =
 == Step 1. Obtaining the source ==
