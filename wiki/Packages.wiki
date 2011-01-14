@@ -1,13 +1,13 @@
 #summary List of packages used by PU
 #labels Phase-Implementation,Featured
 
-= List of packages =
+=== List of packages ===
   * [Logger]
   * [Network]
   * [Position]
   * [PUTools]
   * [SDL]
 
-= External packages =
+=== External packages ===
   * [http://code.google.com/p/goconf GoConf]
   * [https://github.com/Philio/GoMySQL GoMySQL]
