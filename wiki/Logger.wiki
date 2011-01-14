@@ -1,4 +1,4 @@
-#labels Phase-Implementation,Featured,Phase-Support
+#labels Phase-Implementation,Phase-Support
 How to setup a basic text to file logger
 
 = Introduction =
