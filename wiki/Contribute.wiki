@@ -8,12 +8,12 @@ Everyone is welcome to propose code modifications and additions to Pokemon Unive
 = Prerequisites =
 
 You will need the following:
-* Subversion
-* Python
-* A Google account (used gmail, youtube etc.)
+  * Subversion
+  * Python
+  * A Google account (used gmail, youtube etc.)
 
 = Contributing code =
-== Step 1. Obtaining the source
+== Step 1. Obtaining the source ==
 Use your Subversion client to check out the trunk of our source
 {{{
 svn checkout http://pokemon-universe.googlecode.com/svn/trunk/
