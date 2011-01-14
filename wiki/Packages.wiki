@@ -1,0 +1,5 @@
+#summary List of packages used by PU
+
+= List of packages =
+
+* [Logger]
