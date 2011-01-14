@@ -52,7 +52,7 @@ flags := logger.L_CONSOLE|logger.L_FILE
 
 ----
 
-To change the date/time format you can use one of the predefined constants in the log package:
+To change the date/time format you can use one of the predefined constants in the Go [http://golang.org/pkg/log/#Constants log] package:
 {{{
 const (
     // Bits or'ed together to control what's printed. There is no control over the
