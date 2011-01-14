@@ -1,1 +1,3 @@
 [GettingStarted]
+
+[w/list Full page list]
