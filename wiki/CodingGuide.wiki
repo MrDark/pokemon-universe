@@ -1,7 +1,8 @@
 #summary Coding guidelines
 #labels Featured
 
-= Style =
+*Table of Contents*
+<wiki:toc max_depth="2" />
 
 == Tabs & Indenting ==
 Tab characters (\0x09) should always be used in code to increase the readability. Tabs may be replaced by 4 space characters when tabs are not allowed by the editor.
