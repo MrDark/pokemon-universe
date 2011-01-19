@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Some general info about the packege and its intefaces goes here...
+Some general info about the package and its intefaces goes here...
 
 
 = Details =
