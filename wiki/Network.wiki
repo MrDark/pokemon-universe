@@ -7,5 +7,5 @@ Some general info about the packege and its intefaces goes here...
 
 = Details =
 
-List of NetMessages :
+List of used messages:
   * [LoginMessage]
