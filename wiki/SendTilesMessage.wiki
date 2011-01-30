@@ -24,8 +24,10 @@ Packet setup
 -- Foreach tile layer --
 || Layer || uint32 || ||
 || Sprite || uint32 || ||
+
 -- End --
 
 || Location id || uint32 || ||
 || Location name || string || ||
+
 - End -
