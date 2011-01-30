@@ -15,7 +15,7 @@ Packet build:
 || Position X || uint16 || ||
 || Position Y || uint16 || ||
 || Direction || uint16 || ||
-|| Money || uint16 || ||
+|| Money || uint32 || For the very rich ||
 || Outfit Upper || uint8 || Style ||
 || Outfit Upper || uint32 || Colour ||
 || Outfit Nek || uint8 || Style ||
