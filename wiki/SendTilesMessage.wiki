@@ -15,19 +15,14 @@ Packet setup
 || *Value* || *Type* || *Comment* ||
 || Header || uint8 || HEADER_TILES ||
 || Total tiles || uint32 || ||
-
-- Foreach tile -
+|| *- Foreach tile -* ||
 || Position X || uint32 || ||
 || Position Y || uint32 || ||
 || Blocking || uint32 || ||
-
--- Foreach tile layer --
+|| *-- Foreach tile layer --* ||
 || Layer || uint32 || ||
 || Sprite || uint32 || ||
-
--- End --
-
+|| *-- End --* ||
 || Location id || uint32 || ||
 || Location name || string || ||
-
-- End -
+|| *- End -*||
