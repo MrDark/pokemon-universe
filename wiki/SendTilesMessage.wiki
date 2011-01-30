@@ -14,15 +14,15 @@ SendTilesMessage is used by the server to send all viewable tiles to the client.
 Packet setup
 || *Value* || *Type* || *Comment* ||
 || Header || uint8 || HEADER_TILES ||
-|| Total tiles || uint32 || ||
+|| Total tiles || uint16 || ||
 || *- Foreach tile -* ||
-|| Position X || uint32 || ||
-|| Position Y || uint32 || ||
+|| Position X || uint16 || ||
+|| Position Y || uint16 || ||
 || Blocking || uint32 || ||
 || *-- Foreach tile layer --* ||
-|| Layer || uint32 || ||
+|| Layer || uint16 || ||
 || Sprite || uint32 || ||
 || *-- End --* ||
-|| Location id || uint32 || ||
+|| Location id || uint16 || ||
 || Location name || string || ||
 || *- End -*||
