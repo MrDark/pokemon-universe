@@ -9,3 +9,4 @@ Some general info about the package and its intefaces goes here...
 
 List of used messages:
   * [LoginMessage]
+  * [SendTilesMessage]
