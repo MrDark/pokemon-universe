@@ -1,0 +1,164 @@
+/*Pokemon Universe MMORPG
+Copyright (C) 2010 the Pokemon Universe Authors
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*/
+package main
+
+import (
+	punet "network"
+)
+
+type PU_GameProtocol struct {
+}
+
+func NewGameProtocol() *PU_GameProtocol {
+	return &PU_GameProtocol{}
+}
+
+func (p *PU_GameProtocol) ProcessPacket(_packet *punet.Packet) {
+	header := _packet.ReadUint8()
+	switch header {
+		case punet.HEADER_PING:
+			p.ReceivePing()
+			
+		case punet.HEADER_LOGIN:
+			p.ReceiveLoginStatus(_packet)
+			
+		case punet.HEADER_IDENTITY:
+			NewIdentityMessage(_packet)
+			
+		case punet.HEADER_TILES:
+			NewTilesMessage(_packet)
+			
+		//Headers that are not punet constants are headers that might change.
+		//Currently they are used to make the client compatible with the 
+		//old puserver.
+		case 0xB1:
+			NewCreatureMoveMessage(_packet)
+	
+		case 0xB2:
+			if g_game.self != nil {
+				g_game.self.CancelWalk()
+			}
+			
+		case 0xB3:
+			NewWarpMessage(_packet)
+			
+		case 0xB4:
+			NewCreatureTurnMessage(_packet)
+			
+		case 0xC2:
+			NewAddPlayerMessage(_packet)
+			
+		case 0xC3:
+			NewRemoveCreatureMessage(_packet)
+			
+		case 0x03:
+			p.ReceiveTilesRefreshed()
+			
+		case 0x10:
+			NewReceiveChatMessage(_packet)
+			
+		case 0x20:
+			NewReceiveDialogueMessage(_packet)
+			
+		case 0xD0:
+			NewBattleMessage(_packet)
+			
+		case 0xD1:
+			NewReceivePokemonMessage(_packet)
+			
+		case 0xDE:
+			NewBattleEventMessage(_packet)
+	}
+}
+
+func (p *PU_GameProtocol) ReceivePing() {
+	message := NewPingMessage()
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) ReceiveLoginStatus(_packet *punet.Packet) {
+	g_conn.loginStatus = int(_packet.ReadUint8())
+}
+
+func (p *PU_GameProtocol) ReceiveTilesRefreshed() {
+	g_game.state = GAMESTATE_WORLD
+}
+
+func (p *PU_GameProtocol) SendLogin(_username string, _password string) {
+	message := NewLoginMessage()
+	message.username = _username
+	message.password = _password
+	message.version = CLIENT_VERSION
+	g_conn.SendMessage(message)
+} 
+
+func (p *PU_GameProtocol) SendRequestLoginPackets() {
+	message := NewLoginRequestMessage()
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendRefreshPokemon() {
+	message := NewRefreshPokemonMessage()
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendMove(_direction int, _requestTiles bool) {
+	message := NewMoveMessage()
+	message.direction = _direction
+	message.requestTiles = _requestTiles
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendTurn(_direction int) {
+	message := NewTurnMessage()
+	message.direction = _direction
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendChat(_speaktype int, _channel int, _message string) {
+	message := NewSendChatMessage()
+	message.speaktype = _speaktype
+	message.channel = _channel
+	message.message = _message
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendSlotChange(_oldSlot int, _newSlot int) {
+	message := NewSlotChangeMessage()
+	message.oldSlot = _oldSlot
+	message.newSlot = _newSlot
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendDialogueAnswer(_answer int) {
+	message := NewDialogueAnswerMessage()
+	message.answer = _answer
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendActionPress() {
+	message := NewActionPressMessage()
+	g_conn.SendMessage(message)
+}
+
+func (p *PU_GameProtocol) SendBattleMove(_movetype int, _param1 int, _param2 int) {
+	message := NewBattleMoveMessage()
+	message.movetype = _movetype
+	message.param1 = _param1
+	message.param2 = _param2
+	g_conn.SendMessage(message)
+}
