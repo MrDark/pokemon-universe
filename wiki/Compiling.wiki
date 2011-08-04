@@ -1,0 +1,36 @@
+#summary How to compile the source code and execute it successfully.
+
+= Installing the Dependencies =
+
+First of all, PU is programmed in [http://golang.org/ the Go Programming Language]. Follow [http://golang.org/doc/install.html Getting Started] in order to install Go on your machine.
+
+We also use the newest SDL, SDL_ttf and SDL_image. These require other libraries too, let's install them:
+{{{
+sudo apt-get install libgl1-mesa-dev libpng12-dev libjpeg62-dev libfreetype6-dev
+
+hg clone http://hg.libsdl.org/SDL
+cd SDL
+./autogen.sh
+./configure
+make
+sudo make install
+
+hg clone http://hg.libsdl.org/SDL_ttf
+cd SDL_ttf
+./autogen.sh
+./configure
+make
+sudo make install
+
+hg clone http://hg.libsdl.org/SDL_image
+cd SDL_image
+./autogen.sh
+./configure
+make
+sudo make install
+}}}
+
+
+= Compiling! =
+
+Soon...
