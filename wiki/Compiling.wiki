@@ -33,4 +33,13 @@ sudo make install
 
 = Compiling! =
 
-Soon...
+Let's checkout the newest PU:
+{{{
+svn checkout https://pokemon-universe.googlecode.com/svn/trunk/ pu
+}}}
+
+In order for the client and server to compile, you must install the packages in the `Packages` directory. However, calling `make` will automate this together with compiling the client and server.
+{{{
+cd pu
+make
+}}}
