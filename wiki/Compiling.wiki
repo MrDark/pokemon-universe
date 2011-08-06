@@ -6,7 +6,7 @@ First of all, PU is programmed in [http://golang.org/ the Go Programming Languag
 
 We also use the newest SDL, SDL_ttf and SDL_image. These require other libraries too, let's install them:
 {{{
-sudo apt-get install libgl1-mesa-dev libpng12-dev libjpeg62-dev libfreetype6-dev autoconf
+sudo apt-get install libgl1-mesa-dev libpng12-dev libjpeg62-dev libfreetype6-dev autoconf subversion
 
 hg clone http://hg.libsdl.org/SDL
 cd SDL
