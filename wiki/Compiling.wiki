@@ -8,7 +8,7 @@ We also use the newest SDL, SDL_ttf and SDL_image. These require other libraries
 {{{
 sudo apt-get install libgl1-mesa-dev libpng12-dev libjpeg62-dev libfreetype6-dev autoconf subversion
 
-hg clone http://hg.libsdl.org/SDL -r 0d221d6ffac8
+hg clone http://hg.libsdl.org/SDL -r 1281a3f1f0a6
 cd SDL
 ./autogen.sh
 ./configure
